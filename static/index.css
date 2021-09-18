@@ -1,0 +1,26 @@
+.div_form{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.form_principal{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#input_1{
+    font-size: 180%;
+    width: 13%;
+}
+#input_2{
+    font-size: 180%;
+    width: 13%;
+
+}
+
+#buton_submit_principal{
+    font-size: 130%;
+}
