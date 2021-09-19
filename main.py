@@ -42,13 +42,32 @@ def rezultate_monohibridare():
         f1_rez_2 = split_1_1 + split_2_2
         f1_rez_3 = split_1_2 + split_2_1
         f1_rez_4 = split_1_2 + split_2_2
+
         #reverse in caz de 'aA'
         f1_rez_neprocesate_lista = [f1_rez_1, f1_rez_2, f1_rez_3, f1_rez_4]
         f1_rez_procesate_lista = list(map(reverse, f1_rez_neprocesate_lista))
 
+        #f2 split ( /2)
+        f2_split_1_1 = f1_rez_1[:len(f1_rez_1)//2]
+        f2_split_1_2 = f1_rez_1[len(f1_rez_1)//2:]
+        f2_split_2_1 = f1_rez_1[:len(f1_rez_1)//2]
+        f2_split_2_2 = f1_rez_1[len(f1_rez_1)//2:]
+
+        f2_split_lista = [f2_split_1_1, f2_split_1_2, f2_split_2_1, f2_split_2_2]
+
+        #rezultate f2
+        f2_rez_1 = f2_split_1_1 + f2_split_2_1
+        f2_rez_2 = f2_split_1_1 + f2_split_2_2
+        f2_rez_3 = f2_split_1_2 + f2_split_2_1
+        f2_rez_4 = f2_split_1_2 + f2_split_2_2
+
+        #reverse in caz de 'aA'
+        f2_rez_neprocesate_lista = [f2_rez_1, f2_rez_2, f2_rez_3, f2_rez_4]
+        f2_rez_procesate_lista = list(map(reverse, f2_rez_neprocesate_lista))
 
         return render_template('rezultate_monohibridare.html', input_1=input_1, input_2=input_2,
-        split_lista = split_lista, f1_rez_procesate_lista = f1_rez_procesate_lista)
+        split_lista = split_lista, f1_rez_procesate_lista = f1_rez_procesate_lista,
+        f2_split_lista = f2_split_lista, f2_rez_procesate_lista = f2_rez_procesate_lista)
     if request.method == 'POST':
         pass
 

@@ -12,5 +12,10 @@
     <p>{{input_1}}{{input_2}}</p>
     <p>{{split_lista}}</p>
     <p>{{f1_rez_procesate_lista}}</p>
+    {% if f1_rez_procesate_lista[0] == f1_rez_procesate_lista[1] == f1_rez_procesate_lista[2] == f1_rez_procesate_lista[3]%}
+    <p>{{f1_rez_procesate_lista[0]}} {{f1_rez_procesate_lista[0]}}</p>
+    <p>{{f2_split_lista}}</p>
+    <p>{{f2_rez_procesate_lista}}</p>
+    {% endif %}
 </body>
 </html>
