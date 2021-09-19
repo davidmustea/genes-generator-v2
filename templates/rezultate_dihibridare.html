@@ -4,10 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rezultate_monohibridare</title>
+    <title>rezultate_dihibridare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'rezultate_dihibridare.css')}}">
+
 </head>
 <body>
-    {{input_1}}{{input_2}}
-    
+    <p>{{input_1}}{{input_2}}</p>
+    <p>{{split_lista}}</p>
+    <p>{{f1_rez_procesate_lista}}</p>
+    <p>{{f1_rez}} {{f1_rez}} {{f1_rez}} {{f1_rez}} </p>
+    <table>
+        <tr>
+            <td>ex</td>
+            <td>{{table_inputs[0]}}</td>
+            <td>{{table_inputs[1]}}</td>
+            <td>{{table_inputs[2]}}</td>
+            <td>{{table_inputs[3]}}</td>
+        </tr>
+        <tr>
+            <td>{{table_inputs[0]}}</td>
+            <td>{{cols_and_rand_lista[0]}}</td>
+            <td>{{cols_and_rand_lista[4]}}</td>
+            <td>{{cols_and_rand_lista[8]}}</td>
+            <td>{{cols_and_rand_lista[12]}}</td>
+        </tr>
+        <tr>
+            <td>{{table_inputs[1]}}</td>
+            <td>{{cols_and_rand_lista[1]}}</td>
+            <td>{{cols_and_rand_lista[5]}}</td>
+            <td>{{cols_and_rand_lista[9]}}</td>
+            <td>{{cols_and_rand_lista[13]}}</td>
+        </tr>
+        <tr>
+            <td>{{table_inputs[2]}}</td>
+            <td>{{cols_and_rand_lista[2]}}</td>
+            <td>{{cols_and_rand_lista[6]}}</td>
+            <td>{{cols_and_rand_lista[10]}}</td>
+            <td>{{cols_and_rand_lista[14]}}</td>
+        </tr>
+        <tr>
+            <td>{{table_inputs[3]}}</td>
+            <td>{{cols_and_rand_lista[3]}}</td>
+            <td>{{cols_and_rand_lista[7]}}</td>
+            <td>{{cols_and_rand_lista[11]}}</td>
+            <td>{{cols_and_rand_lista[15]}}</td>
+        </tr>
+    </table>
 </body>
 </html>
