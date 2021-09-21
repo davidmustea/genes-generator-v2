@@ -50,5 +50,27 @@
             <td>{{cols_and_rand_lista[15]}}</td>
         </tr>
     </table>
+
+    <form action="#" method="post">
+        <input type="text" name="nume_gena_1">
+        <input type="text" name="nume_gena_2">
+        <input type="text" name="nume_gena_3">
+        <input type="text" name="nume_gena_4">
+        <input type="submit">
+    </form>
+
+    {% if nume_gena_1 != '' and nume_gena_2 != '' and nume_gena_3 != '' and nume_gena_4 != ''%}
+    <div class="detalii">
+        <p>Raportul de segregare după fenotip este de: 9:3:3:1</p>
+        <p>(9 - {{nume_gena_1}} si {{nume_gena_2}}, 3 - {{nume_gena_1}} si {{nume_gena_4}}, 3 - {{nume_gena_3}} si {{nume_gena_2}}, 1 - {{nume_gena_3}} si {{nume_gena_4}})</p>
+        <p>9/16*100=56,26% - {{nume_gena_1}} si {{nume_gena_2}}</p>
+        <p>3/16*100=18,75% - {{nume_gena_1}} si {{nume_gena_4}}</p>
+        <p>3/16*100=18,75% - {{nume_gena_3}} si {{nume_gena_2}}</p>
+        <p>1/16*100=6,25% - {{nume_gena_3}} si {{nume_gena_4}}</p>
+    </div>
+    {% endif %}
+    {{nume_gena_1}} {{nume_gena_2}}
+    {{nume_gena_3}} {{nume_gena_4}}
+    <a href="/">Reset</a>
 </body>
 </html>

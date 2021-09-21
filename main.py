@@ -6,6 +6,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def default():
+    global nume_gena_1, nume_gena_2, nume_gena_3, nume_gena_4
+    #sa nu dea form eroare ca nu are variabile definite
+    nume_gena_1 = ''
+    nume_gena_2 = ''
+    nume_gena_3 = ''
+    nume_gena_4 = ''
     return redirect(url_for("genes_generator"))
 
 
@@ -28,6 +34,9 @@ def genes_generator():
 
 @app.route('/rezultate_monohibridare', methods=['GET', 'POST'])
 def rezultate_monohibridare():
+    #sa rezolv cumva sa resetez nume_gena_1 si nume_gena_2 cu buton de reset
+    global nume_gena_1, nume_gena_2
+    
     if request.method == 'GET':
         #input_1 si input_2 impartit in 2 ca string 'a'
         split_1_1 = input_1[:len(input_1)//2]
@@ -67,13 +76,21 @@ def rezultate_monohibridare():
 
         return render_template('rezultate_monohibridare.html', input_1=input_1, input_2=input_2,
         split_lista = split_lista, f1_rez_procesate_lista = f1_rez_procesate_lista,
-        f2_split_lista = f2_split_lista, f2_rez_procesate_lista = f2_rez_procesate_lista)
+        f2_split_lista = f2_split_lista, f2_rez_procesate_lista = f2_rez_procesate_lista,
+        nume_gena_1 = nume_gena_1, nume_gena_2 = nume_gena_2)
+
     if request.method == 'POST':
-        pass
+        nume_gena_1 = request.form.get("nume_gena_1")
+        nume_gena_2 = request.form.get("nume_gena_2")
+
+        return redirect(url_for("rezultate_monohibridare"))
+
+        
 
 
 @app.route('/rezultate_dihibridare', methods=['GET', 'POST'])
 def rezultate_dihibridare():
+    global nume_gena_1, nume_gena_2, nume_gena_3, nume_gena_4
     if request.method == 'GET':
         #input_1 si input_2 impartit in 2 ca string 'aa'
         split_1_1 = input_1[:len(input_1)//2]
@@ -129,10 +146,16 @@ def rezultate_dihibridare():
         return render_template('rezultate_dihibridare.html', input_1=input_1, input_2=input_2,
         split_lista = split_lista,
         f1_rez = f1_rez, table_inputs = table_inputs,
-        cols_and_rand_lista = cols_and_rand_lista)
+        cols_and_rand_lista = cols_and_rand_lista,
+        nume_gena_1 = nume_gena_1, nume_gena_2 = nume_gena_2, nume_gena_3 = nume_gena_3, nume_gena_4 = nume_gena_4)
 
     if request.method == 'POST':
-        pass
+        nume_gena_1 = request.form.get("nume_gena_1")
+        nume_gena_2 = request.form.get("nume_gena_2")
+        nume_gena_3 = request.form.get("nume_gena_3")
+        nume_gena_4 = request.form.get("nume_gena_4")
+
+        return redirect(url_for("rezultate_dihibridare"))
 
 
 if __name__ == "__main__":
