@@ -1,8 +1,8 @@
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, render_template, redirect, url_for, request, flash
 from functii import *
 
 app = Flask(__name__)
-
+app.secret_key = "delocsecret"
 
 @app.route('/')
 def default():
@@ -26,10 +26,19 @@ def genes_generator():
         input_2 = request.form.get('input_2')
 
         if len(input_1) == len(input_2) and len(input_1) == 2:
-            return redirect(url_for('rezultate_monohibridare'))
+            if input_1.isupper() and input_2.islower():
+                return redirect(url_for('rezultate_monohibridare'))
+            else:
+                flash("Inputul trebuie sa fie Gena dominanta - gena recesiva - ex AA - aa nu Aa - Aa")
+                return redirect(url_for('default'))
+                
 
         if len(input_1) == len(input_2) and len(input_1) == 4:
-            return redirect(url_for('rezultate_dihibridare'))
+            if input_1.isupper() and input_2.islower():
+                return redirect(url_for('rezultate_dihibridare'))
+            else:
+                flash("input trebuie sa fie de genul NNGG - zzvv")
+                return redirect(url_for('default'))
 
 
 @app.route('/rezultate_monohibridare', methods=['GET', 'POST'])

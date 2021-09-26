@@ -1,0 +1,65 @@
+body, h1, p{
+    margin: 0;
+    font-size: 230%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.f1{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.f1 > *{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.div_split_f1{
+    width: 75%;
+}
+.div_split_input_1_f1, .div_split_input_2_f1{
+    display: flex;
+    width: 23%;
+    justify-content: space-between;
+}
+
+.sageti_1_f1{
+    width: 73%;
+}
+
+.f2{
+    margin-top: 100px;
+}
+
+form{
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+    margin: 0;
+    font-size: 70%;
+}
+
+.form{
+    margin-top: 100px;
+}
+
+#buton_reset{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 2%;
+    margin-bottom: 3%;
+    font-size: 130%;
+}
+
+.statistici{
+    margin-top: 50px;
+    font-size: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
