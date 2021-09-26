@@ -29,16 +29,20 @@ def genes_generator():
             if input_1.isupper() and input_2.islower():
                 return redirect(url_for('rezultate_monohibridare'))
             else:
-                flash("Inputul trebuie sa fie Gena dominanta - gena recesiva - ex AA - aa nu Aa - Aa")
+                flash("Input-ul trebuie sa fie Gena dominanta - Gena recesiva ex. AA - aa NU Aa - Aa.")
                 return redirect(url_for('default'))
                 
 
-        if len(input_1) == len(input_2) and len(input_1) == 4:
+        elif len(input_1) == len(input_2) and len(input_1) == 4:
             if input_1.isupper() and input_2.islower():
                 return redirect(url_for('rezultate_dihibridare'))
             else:
-                flash("input trebuie sa fie de genul NNGG - zzvv")
+                flash("Input-ul trebuie sa fie de genul NNGG - zzvv")
                 return redirect(url_for('default'))
+
+        else:
+            flash("Functioneaza doar functia de monohibridare si dihibridare.")
+            return redirect(url_for('default'))
 
 
 @app.route('/rezultate_monohibridare', methods=['GET', 'POST'])
