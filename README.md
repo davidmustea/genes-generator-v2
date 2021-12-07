@@ -2,6 +2,10 @@
 
 Acest proiect este o aplicatie web care combina genele in mod automat.
 
+Pentru a porni server-ul trebuie sa executati ```main.py``` cu flask instalat. Daca nu il aveti instalat ```pip install flask```.
+Server-ul se va porni pe localhost pe portul 5000.
+Mergeti pe http://127.0.0.1:5000/
+
 ## Pasul 1
 Trebuie sa introducem genele in form. Input-ul trebuie sa fie de genul AA - bb.
 
